@@ -5,20 +5,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/analytics"
-    tools:context=".MainActivity" >
+    tools:context=".MainActivity">
 
     <Button
         android:id="@+id/button"
-        android:layout_width="213dp"
+        android:layout_width="198dp"
         android:layout_height="65dp"
         android:backgroundTint="#FFFFFF"
-        android:text="go to convert page"
+        android:text="rate"
         android:textAlignment="center"
         android:textColor="#03245C"
         android:textColorHighlight="#000000"
         android:textColorHint="#000000"
         android:textColorLink="#000000"
-        android:textSize="15sp"
+        android:textSize="20sp"
         app:cornerRadius="50px"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -26,4 +26,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.7" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="287dp"
+        android:layout_height="52dp"
+        android:background="#B33030"
+        android:backgroundTint="#FAD1C7C7"
+        android:text="العملة الصعبة"
+        android:textAlignment="center"
+        android:textColor="#03245C"
+        android:textColorHighlight="#000000"
+        android:textColorHint="#000000"
+        android:textColorLink="#000000"
+        android:textSize="40sp"
+        app:circularflow_defaultRadius="50dp"
+        app:circularflow_radiusInDP="50dp"
+        tools:layout_editor_absoluteX="65dp"
+        tools:layout_editor_absoluteY="38dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

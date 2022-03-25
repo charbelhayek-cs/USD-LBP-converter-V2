@@ -12,6 +12,7 @@
         android:layout_width="198dp"
         android:layout_height="65dp"
         android:backgroundTint="#FFFFFF"
+        android:onClick="goToNextPage"
         android:text="rate"
         android:textAlignment="center"
         android:textColor="#03245C"

@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
     public void goToNextPage(View v){
-        Intent intent=new Intent(getApplicationContext(),MainActivity2.class);
+        Intent intent=new Intent(getApplicationContext(),MainActivity2.class);// i am calling the next page
         startActivity(intent);
     }
 }

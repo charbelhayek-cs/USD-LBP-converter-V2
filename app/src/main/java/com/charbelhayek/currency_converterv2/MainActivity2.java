@@ -3,24 +3,30 @@ package com.charbelhayek.currency_converterv2;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity2 extends AppCompatActivity {
-   TextView USD;
-   TextView LBP;
+   EditText USD;
+   EditText LBP;
+   ImageView exchange;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
-        USD= (TextView) findViewById(R.id.USD);
-        LBP= (TextView) findViewById(R.id.LBP);
+        USD= (EditText) findViewById(R.id.USD);
+        LBP= (EditText) findViewById(R.id.LBP);
+        exchange=(ImageView)findViewById(R.id.exchange);
     }
 
     public void convert(View v){
         String input_USD=USD.getText().toString();
         String input_LBP=LBP.getText().toString();
+        exchange.animate().rotation(360).setDuration(2000);
 
         if(input_USD.equals("") && input_LBP.equals("")){
             String message="Please put a number in one of the cases you did not put any!";
@@ -45,5 +51,4 @@ public class MainActivity2 extends AppCompatActivity {
         }
 
     }
-}
 }

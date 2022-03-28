@@ -29,36 +29,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.07999998" />
 
-    <TextView
-        android:id="@+id/USD"
-        android:layout_width="295dp"
-        android:layout_height="66dp"
-        android:hint="USD"
-        android:textAlignment="center"
-        android:textColorHint="@color/cardview_dark_background"
-        android:textSize="40dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.534"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.563" />
-
-    <TextView
-        android:id="@+id/LBP"
-        android:layout_width="295dp"
-        android:layout_height="65dp"
-        android:hint="LBP"
-        android:textAlignment="center"
-        android:textColorHint="@color/cardview_dark_background"
-        android:textSize="40dp"
-        app:layout_constraintBottom_toTopOf="@+id/USD"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.534"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3"
-        app:layout_constraintVertical_bias="0.543" />
-
     <ImageView
         android:id="@+id/exchange"
         android:layout_width="130dp"
@@ -67,8 +37,38 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/USD"
-        app:layout_constraintVertical_bias="0.25"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        app:layout_constraintVertical_bias="0.75"
         app:srcCompat="@drawable/exchange" />
+
+    <EditText
+        android:id="@+id/LBP"
+        android:layout_width="252dp"
+        android:layout_height="71dp"
+        android:ems="10"
+        android:hint="LBP"
+        android:inputType="textPersonName"
+        android:textAlignment="center"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/USD"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        app:layout_constraintVertical_bias="0.65999997" />
+
+    <EditText
+        android:id="@+id/USD"
+        android:layout_width="253dp"
+        android:layout_height="71dp"
+        android:ems="10"
+        android:hint="USD"
+        android:inputType="textPersonName"
+        android:textAlignment="center"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/exchange"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/LBP" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

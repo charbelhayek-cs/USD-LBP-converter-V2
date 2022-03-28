@@ -59,4 +59,16 @@
         app:layout_constraintTop_toBottomOf="@+id/textView3"
         app:layout_constraintVertical_bias="0.543" />
 
+    <ImageView
+        android:id="@+id/exchange"
+        android:layout_width="130dp"
+        android:layout_height="99dp"
+        android:onClick="convert"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/USD"
+        app:layout_constraintVertical_bias="0.25"
+        app:srcCompat="@drawable/exchange" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

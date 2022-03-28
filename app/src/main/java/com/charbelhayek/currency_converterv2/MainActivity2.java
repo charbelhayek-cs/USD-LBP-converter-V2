@@ -4,21 +4,21 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.widget.EditText;
+import android.widget.TextView;
 
 public class MainActivity2 extends AppCompatActivity {
-    EditText USD;
-    EditText LBP;
+   TextView USD;
+   TextView LBP;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
-        USD= (EditText) findViewById(R.id.USD);
-        LBP=(EditText) findViewById(R.id.LBP);
+        USD= (TextView) findViewById(R.id.USD);
+        LBP= (TextView) findViewById(R.id.LBP);
     }
 
-}
-    public void login(View v){
+    public void convert(View v){
         String input_USD=USD.getText().toString();
         String input_LBP=LBP.getText().toString();
 

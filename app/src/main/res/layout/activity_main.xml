@@ -41,6 +41,7 @@
         android:textColorHint="#000000"
         android:textColorLink="#000000"
         android:textSize="40sp"
+        android:textStyle="bold"
         app:circularflow_defaultRadius="50dp"
         app:circularflow_radiusInDP="50dp"
         app:layout_constraintBottom_toTopOf="@+id/button"

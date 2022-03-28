@@ -6,4 +6,57 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity2">
 
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="287dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="28dp"
+        android:background="#B33030"
+        android:backgroundTint="@color/cardview_shadow_end_color"
+        android:text="العملة الصعبة"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textColorHighlight="#000000"
+        android:textColorHint="#000000"
+        android:textColorLink="#000000"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:circularflow_defaultRadius="50dp"
+        app:circularflow_radiusInDP="50dp"
+        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.07999998" />
+
+    <TextView
+        android:id="@+id/USD"
+        android:layout_width="295dp"
+        android:layout_height="66dp"
+        android:hint="USD"
+        android:textAlignment="center"
+        android:textColorHint="@color/cardview_dark_background"
+        android:textSize="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.534"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.563" />
+
+    <TextView
+        android:id="@+id/LBP"
+        android:layout_width="295dp"
+        android:layout_height="65dp"
+        android:hint="LBP"
+        android:textAlignment="center"
+        android:textColorHint="@color/cardview_dark_background"
+        android:textSize="40dp"
+        app:layout_constraintBottom_toTopOf="@+id/USD"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.534"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        app:layout_constraintVertical_bias="0.543" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

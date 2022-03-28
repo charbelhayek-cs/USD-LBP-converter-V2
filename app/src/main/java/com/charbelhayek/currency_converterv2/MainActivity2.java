@@ -26,27 +26,31 @@ public class MainActivity2 extends AppCompatActivity {
     public void convert(View v){
         String input_USD=USD.getText().toString();
         String input_LBP=LBP.getText().toString();
-        exchange.animate().rotation(360).setDuration(2000);
+        exchange.animate().rotation(-360).setDuration(2000);
 
         if(input_USD.equals("") && input_LBP.equals("")){
             String message="Please put a number in one of the cases you did not put any!";
+            exchange.animate().rotation(360).setDuration(2000);
             Toast.makeText(getApplicationContext(),message,Toast.LENGTH_LONG).show();
         }
         else if(!input_USD.equals("") && !input_LBP.equals(""))
         {
             String message="Please put a number in one of the cases so we can convert";
+            exchange.animate().rotation(360).setDuration(2000);
             Toast.makeText(getApplicationContext(),message,Toast.LENGTH_LONG).show();
         }
         else if(!input_USD.equals("") && input_LBP.equals(""))
         {
             Double inp_USD = Double.parseDouble(input_USD);
             double result = inp_USD * 22000;
+            exchange.animate().rotation(360).setDuration(2000);
             Toast.makeText(getApplicationContext(), "the result is: " + result + " LBP", Toast.LENGTH_LONG).show();
 
         }
         else{
             Double inp_LBP=Double.parseDouble(input_LBP);
             double result=inp_LBP/22000;
+            exchange.animate().rotation(360).setDuration(2000);
             Toast.makeText(getApplicationContext(),"the result is: "+result+" USD",Toast.LENGTH_LONG).show();
         }
 

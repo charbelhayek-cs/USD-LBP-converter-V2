@@ -2,17 +2,22 @@ package com.charbelhayek.currency_converterv2;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.xml.sax.ext.LexicalHandler;
+
 public class MainActivity2 extends AppCompatActivity {
    EditText USD;
    EditText LBP;
    ImageView exchange;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,36 +27,44 @@ public class MainActivity2 extends AppCompatActivity {
         LBP= (EditText) findViewById(R.id.LBP);
         exchange=(ImageView)findViewById(R.id.exchange);
     }
+    public void back(View v){
+        Intent intent=new Intent(getApplicationContext(),MainActivity.class);// i am calling the next page
+        startActivity(intent);
+    }
 
     public void convert(View v){
         String input_USD=USD.getText().toString();
         String input_LBP=LBP.getText().toString();
-
+        exchange.animate().rotation(360).setDuration(2000);
+        exchange.clearAnimation();
 
         if(input_USD.equals("") && input_LBP.equals("")){
             String message="Please put a number in one of the cases you did not put any!";
-            exchange.animate().rotation(360).setDuration(2000);
+
             Toast.makeText(getApplicationContext(),message,Toast.LENGTH_LONG).show();
-            exchange.animate().rotation(-360).setDuration(2000);
+
         }
         else if(!input_USD.equals("") && !input_LBP.equals(""))
         {
             String message="Please put a number in one of the cases so we can convert";
-            exchange.animate().rotation(360).setDuration(2000);
+//            exchange.animate().rotation(360).setDuration(2000);
+//            exchange.clearAnimation();
             Toast.makeText(getApplicationContext(),message,Toast.LENGTH_LONG).show();
         }
         else if(!input_USD.equals("") && input_LBP.equals(""))
         {
             Double inp_USD = Double.parseDouble(input_USD);
             double result = inp_USD * 22000;
-            exchange.animate().rotation(360).setDuration(2000);
+//            exchange.animate().rotation(360).setDuration(2000);
+//            exchange.clearAnimation();
             Toast.makeText(getApplicationContext(), "the result is: " + result + " LBP", Toast.LENGTH_LONG).show();
 
         }
         else{
             Double inp_LBP=Double.parseDouble(input_LBP);
             double result=inp_LBP/22000;
-            exchange.animate().rotation(360).setDuration(2000);
+//            exchange.animate().rotation(360).setDuration(2000);
+//            exchange.clearAnimation();
             Toast.makeText(getApplicationContext(),"the result is: "+result+" USD",Toast.LENGTH_LONG).show();
         }
 

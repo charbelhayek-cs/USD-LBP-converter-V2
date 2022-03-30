@@ -26,12 +26,13 @@ public class MainActivity2 extends AppCompatActivity {
     public void convert(View v){
         String input_USD=USD.getText().toString();
         String input_LBP=LBP.getText().toString();
-        exchange.animate().rotation(-360).setDuration(2000);
+
 
         if(input_USD.equals("") && input_LBP.equals("")){
             String message="Please put a number in one of the cases you did not put any!";
             exchange.animate().rotation(360).setDuration(2000);
             Toast.makeText(getApplicationContext(),message,Toast.LENGTH_LONG).show();
+            exchange.animate().rotation(-360).setDuration(2000);
         }
         else if(!input_USD.equals("") && !input_LBP.equals(""))
         {

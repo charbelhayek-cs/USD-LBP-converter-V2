@@ -1,21 +1,26 @@
 package com.charbelhayek.currency_converterv2;
+/**********************************************
+ * MainActivity2.java
+ * @author Charbel Hayek, Samer Saber
+ * This class represents the second page of the application
+ * where the currency conversion from dollars to lira or vice versa
+ * can be applied using the rate from 'lirarate.org'.
+ * Other files include: MainActivity.java
+ * Last modified on Thursday, 31 of April 2022
+ */
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.view.animation.Animation;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import org.xml.sax.ext.LexicalHandler;
-
 public class MainActivity2 extends AppCompatActivity {
-   EditText USD;
-   EditText LBP;
+   EditText usd;
+   EditText lbp;
    ImageView exchange;
 
 
@@ -23,18 +28,22 @@ public class MainActivity2 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
-        USD= (EditText) findViewById(R.id.USD);
-        LBP= (EditText) findViewById(R.id.LBP);
-        exchange=(ImageView)findViewById(R.id.exchange);
+        usd = (EditText) findViewById(R.id.USD);
+        lbp = (EditText) findViewById(R.id.LBP);
+        exchange = (ImageView)findViewById(R.id.exchange);
     }
-    public void back(View v){
-        Intent intent=new Intent(getApplicationContext(),MainActivity.class);// i am calling the next page
+    public void back(View v)
+    {
+    //This function will redirect to home page / MainActivity.java
+        Intent intent = new Intent(getApplicationContext(),MainActivity.class);
         startActivity(intent);
     }
 
-    public void convert(View v){
-        String input_USD=USD.getText().toString();
-        String input_LBP=LBP.getText().toString();
+    public void convert(View v)
+    {
+    //This function converts lira value to dollar value and vice versa
+        String input_USD= usd.getText().toString();
+        String input_LBP= lbp.getText().toString();
         exchange.animate().rotation(360).setDuration(2000);
         exchange.clearAnimation();
 

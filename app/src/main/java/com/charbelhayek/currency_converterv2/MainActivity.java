@@ -1,4 +1,11 @@
 package com.charbelhayek.currency_converterv2;
+/***********************************************
+ * MainActivity.java
+ * @author Charbel Hayek, Samer Saber
+ * This class represents the home page of the application.
+ * Other files include: MainActivitiy2.java
+ * Last modified on Thursday, 31 of April 2022
+ ***********************************************/
 
 import androidx.appcompat.app.AppCompatActivity;
 

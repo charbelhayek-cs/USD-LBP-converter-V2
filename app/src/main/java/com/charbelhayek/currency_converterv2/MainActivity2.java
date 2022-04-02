@@ -22,7 +22,7 @@ import android.widget.Toast;
 public class MainActivity2 extends AppCompatActivity {
    EditText usd;
    EditText lbp;
-
+   TextView result;
    ImageView exchange;
 
 
@@ -32,7 +32,7 @@ public class MainActivity2 extends AppCompatActivity {
         setContentView(R.layout.activity_main2);
         usd = (EditText) findViewById(R.id.USD);
         lbp = (EditText) findViewById(R.id.LBP);
-
+        result=(TextView) findViewById(R.id.result);
         exchange = (ImageView) findViewById(R.id.exchange);
     }
     public void back(View v)

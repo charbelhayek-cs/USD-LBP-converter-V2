@@ -83,7 +83,8 @@ public class MainActivity2 extends AppCompatActivity {
             double result = inp_usd * 22000;
 //            exchange.animate().rotation(360).setDuration(2000);
 //            exchange.clearAnimation();
-            output.setText(result+" LBP");
+            String r=String.valueOf(result)+" LBP";
+            output.setText(r);
         }
         else
         {
@@ -103,7 +104,8 @@ public class MainActivity2 extends AppCompatActivity {
             double result = inp_lbp / 22000;
 //            exchange.animate().rotation(360).setDuration(2000);
 //            exchange.clearAnimation();
-            output.setText(result+" USD");
+            String r=String.valueOf(result)+" $";
+            output.setText(r);
         }
     }
 }

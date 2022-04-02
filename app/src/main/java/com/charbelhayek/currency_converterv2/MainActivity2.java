@@ -22,7 +22,7 @@ import android.widget.Toast;
 public class MainActivity2 extends AppCompatActivity {
    EditText usd;
    EditText lbp;
-   TextView result;
+   TextView output;
    ImageView exchange;
 
 
@@ -32,7 +32,7 @@ public class MainActivity2 extends AppCompatActivity {
         setContentView(R.layout.activity_main2);
         usd = (EditText) findViewById(R.id.USD);
         lbp = (EditText) findViewById(R.id.LBP);
-        result=(TextView) findViewById(R.id.result);
+        output=(TextView) findViewById(R.id.result);
         exchange = (ImageView) findViewById(R.id.exchange);
     }
     public void back(View v)
@@ -83,7 +83,7 @@ public class MainActivity2 extends AppCompatActivity {
             double result = inp_usd * 22000;
 //            exchange.animate().rotation(360).setDuration(2000);
 //            exchange.clearAnimation();
-            Toast.makeText(getApplicationContext(), "the result is: " + result + " LBP", Toast.LENGTH_LONG).show();
+            output.setText(result+" LBP");
         }
         else
         {
@@ -103,7 +103,7 @@ public class MainActivity2 extends AppCompatActivity {
             double result = inp_lbp / 22000;
 //            exchange.animate().rotation(360).setDuration(2000);
 //            exchange.clearAnimation();
-            Toast.makeText(getApplicationContext(), "the result is: "+result+" USD", Toast.LENGTH_LONG).show();
+            output.setText(result+" USD");
         }
     }
 }

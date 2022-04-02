@@ -16,11 +16,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity2 extends AppCompatActivity {
    EditText usd;
    EditText lbp;
+
    ImageView exchange;
 
 
@@ -30,6 +32,7 @@ public class MainActivity2 extends AppCompatActivity {
         setContentView(R.layout.activity_main2);
         usd = (EditText) findViewById(R.id.USD);
         lbp = (EditText) findViewById(R.id.LBP);
+
         exchange = (ImageView) findViewById(R.id.exchange);
     }
     public void back(View v)

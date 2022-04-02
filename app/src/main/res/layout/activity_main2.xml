@@ -145,4 +145,15 @@
         app:strokeColor="#000000"
         tools:ignore="SpeakableTextPresentCheck" />
 
+    <TextView
+        android:id="@+id/result"
+        android:layout_width="336dp"
+        android:layout_height="38dp"
+        android:textAlignment="center"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/exchange" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

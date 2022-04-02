@@ -12,12 +12,18 @@ package com.charbelhayek.currency_converterv2;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
 
 public class MainActivity2 extends AppCompatActivity {
    EditText usd;
@@ -26,10 +32,56 @@ public class MainActivity2 extends AppCompatActivity {
    ImageView exchange;
 
 
+   public class DownloadTask extends AsyncTask<String, Void, String>
+   {
+   //This class will be used to run in the background
+        protected String doInBackground(String... urls)
+        {
+        //Pre-execution of the API
+            String result = "";
+            URL url;
+            HttpURLConnection http;
+
+            try
+            {
+                url = new URL(urls[0]);
+                http = (HttpURLConnection) url.openConnection();
+
+                InputStream in = http.getInputStream();
+                InputStreamReader reader = new InputStreamReader(in);
+
+                int data = reader.read();
+
+                while (data != -1)
+                {
+                    char current = (char) data;
+                    result += current;
+                    data = reader.read();
+                }
+            }catch(Exception e)
+            {
+                e.printStackTrace();
+                return null;
+            }
+            return result;
+        }
+
+        protected void onPostExecute(String str)
+        {
+        //Post-execution of the API
+
+        }
+   }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
+        //Linking API when this page is launched
+        String url = "http://localhost/Back-End/api.php";
+        DownloadTask task = new DownloadTask();
+        task.execute(url);
+
+
         usd = (EditText) findViewById(R.id.USD);
         lbp = (EditText) findViewById(R.id.LBP);
         output=(TextView) findViewById(R.id.result);

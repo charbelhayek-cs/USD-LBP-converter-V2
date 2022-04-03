@@ -33,6 +33,7 @@ public class MainActivity2 extends AppCompatActivity {
    EditText lbp;
    TextView output;
    ImageView exchange;
+   int lira_rate;
 
 
    public class DownloadTask extends AsyncTask<String, Void, String>
@@ -83,6 +84,16 @@ public class MainActivity2 extends AppCompatActivity {
                 //String lbp = json.getString("lbp");
                 //String dollar = json.getString("dollar");
                 String omt = json.getString("omt");
+                String rate_list[] = omt.split(",");
+                String rate = rate_list[rate_list.length - 1];
+                rate = rate.substring(0, 5);
+                try {
+                    lira_rate = Integer.parseInt(rate);
+                }catch(NumberFormatException e)
+                {
+                    Toast.makeText(getApplicationContext(), "Could not parse rate", Toast.LENGTH_LONG).show();
+                }
+                Toast.makeText(getApplicationContext(), rate, Toast.LENGTH_LONG).show();
                 Toast.makeText(getApplicationContext(), omt, Toast.LENGTH_LONG).show();
                 //Toast.makeText(getApplicationContext(), "dollar: " + dollar, Toast.LENGTH_LONG).show();
             }catch(Exception e)
@@ -156,7 +167,7 @@ public class MainActivity2 extends AppCompatActivity {
                 return;
             }
 
-            double result = inp_usd * 22000;
+            double result = inp_usd * lira_rate;
 //            exchange.animate().rotation(360).setDuration(2000);
 //            exchange.clearAnimation();
             String r = String.valueOf(result)+" LBP";
@@ -177,10 +188,10 @@ public class MainActivity2 extends AppCompatActivity {
                 return;
             }
 
-            double result = inp_lbp / 22000;
+            double result = inp_lbp / lira_rate;
 //            exchange.animate().rotation(360).setDuration(2000);
 //            exchange.clearAnimation();
-            String r=String.valueOf(result)+" $";
+            String r = String.valueOf(result) + " $";
             output.setText(r);
         }
     }

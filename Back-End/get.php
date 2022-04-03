@@ -3,7 +3,7 @@
 include("db_info.php");
 
 //Execute query to get all values from 'conversions' table in the database
-$query = $mysqli->prepare("SELECT * FROM conversions");
+$query = $mysqli -> prepare("SELECT * FROM conversions WHERE id = (SELECT MAX(id) FROM conversions)");
 $query -> execute();
 
 //Assign values to an array
@@ -18,4 +18,5 @@ while ($conversion = $array -> fetch_assoc())
 
 $json_response = json_encode($response);
 echo $json_response;
+
 ?>

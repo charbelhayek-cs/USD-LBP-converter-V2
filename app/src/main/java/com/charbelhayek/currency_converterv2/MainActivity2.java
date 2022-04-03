@@ -21,6 +21,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.json.JSONObject;
+
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
@@ -64,21 +66,35 @@ public class MainActivity2 extends AppCompatActivity {
                 e.printStackTrace();
                 return null;
             }
+
             return result;
         }
 
         protected void onPostExecute(String str)
         {
         //Post-execution of the API
-            Log.i("result", str);
+            super.onPostExecute(str);
+
+            try {
+                JSONObject json = new JSONObject(str);
+                String created_at = json.getString("created_at");
+                String joke = json.getString("value");
+                Toast.makeText(getApplicationContext(), joke, Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), created_at, Toast.LENGTH_LONG).show();
+            }catch(Exception e)
+            {
+                e.printStackTrace();
+                return;
+            }
         }
    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
+
         //Linking API when this page is launched
-        String url = "http://localhost/Back-End/api.php";
+        String url = "https://api.chucknorris.io/jokes/random";
         DownloadTask task = new DownloadTask();
         task.execute(url);
 
@@ -136,7 +152,7 @@ public class MainActivity2 extends AppCompatActivity {
             double result = inp_usd * 22000;
 //            exchange.animate().rotation(360).setDuration(2000);
 //            exchange.clearAnimation();
-            String r=String.valueOf(result)+" LBP";
+            String r = String.valueOf(result)+" LBP";
             output.setText(r);
         }
         else

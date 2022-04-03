@@ -77,10 +77,14 @@ public class MainActivity2 extends AppCompatActivity {
 
             try {
                 JSONObject json = new JSONObject(str);
-                String created_at = json.getString("created_at");
-                String joke = json.getString("value");
-                Toast.makeText(getApplicationContext(), joke, Toast.LENGTH_LONG).show();
-                Toast.makeText(getApplicationContext(), created_at, Toast.LENGTH_LONG).show();
+                //String created_at = json.getString("created_at");
+                //String joke = json.getString("value");
+                Toast.makeText(getApplicationContext(), "working! ", Toast.LENGTH_LONG).show();
+                //String lbp = json.getString("lbp");
+                //String dollar = json.getString("dollar");
+                String omt = json.getString("omt");
+                Toast.makeText(getApplicationContext(), omt, Toast.LENGTH_LONG).show();
+                //Toast.makeText(getApplicationContext(), "dollar: " + dollar, Toast.LENGTH_LONG).show();
             }catch(Exception e)
             {
                 e.printStackTrace();
@@ -94,7 +98,8 @@ public class MainActivity2 extends AppCompatActivity {
         setContentView(R.layout.activity_main2);
 
         //Linking API when this page is launched
-        String url = "https://api.chucknorris.io/jokes/random";
+        //String url = "https://api.chucknorris.io/jokes/random";
+        String url = "http://192.168.43.99/Back-End/rate.php";
         DownloadTask task = new DownloadTask();
         task.execute(url);
 
@@ -117,7 +122,9 @@ public class MainActivity2 extends AppCompatActivity {
         String input_usd = usd.getText().toString();
         String input_lbp = lbp.getText().toString();
 
-        exchange.animate().rotation(360).setDuration(2000);
+        Toast.makeText(getApplicationContext(), "naya", Toast.LENGTH_LONG).show();
+
+        exchange.animate().rotationBy(360f).setDuration(2000);
         exchange.clearAnimation();
 
         if(input_usd.equals("") && input_lbp.equals(""))

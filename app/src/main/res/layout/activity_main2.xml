@@ -17,7 +17,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/back"
         app:layout_constraintVertical_bias="0.518"
-        app:srcCompat="@drawable/lebanon" />
+        app:srcCompat="@drawable/usa" />
 
     <TextView
         android:id="@+id/textView3"
@@ -84,19 +84,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/LBP" />
-
-    <ImageView
-        android:id="@+id/dollarSign"
-        android:layout_width="72dp"
-        android:layout_height="72dp"
-        android:layout_marginStart="169dp"
-        android:layout_marginTop="19dp"
-        android:layout_marginEnd="170dp"
-        app:layout_constraintBottom_toTopOf="@+id/USD"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/LBP"
-        app:srcCompat="@drawable/dollars" />
 
     <Button
         android:id="@+id/back"
